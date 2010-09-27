@@ -41,10 +41,9 @@ from the global configuration along with the developer abbreviations.
 
 ## About this version
 
-This was forked from http://github.com/chrisk/git-pair.  Many thanks to
-Chris Kampmeier for the original version.  Our version added the --reset
-option, modified how email addresses are handled, and refactored much of 
-the code.
+This was forked from http://github.com/edgecase/git-pair.  Many thanks to
+Chris Kampmeier for the original version.  This version added the --show
+option.
 
 ## License
 
