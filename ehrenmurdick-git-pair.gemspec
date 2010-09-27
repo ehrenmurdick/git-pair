@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ehrenmurdick-git-pair}
-  s.version = "0.2.2"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad", "Ehren Murdick"]
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/git-pair",
      "config/cucumber.yml",
-     "edgecase-git-pair.gemspec",
+     "ehrenmurdick-git-pair.gemspec",
      "features/adding_an_author.feature",
      "features/removing_an_author.feature",
      "features/resetting_the_pair.feature",
