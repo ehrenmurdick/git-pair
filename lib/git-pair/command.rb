@@ -23,6 +23,23 @@ module GitPair
           Config.reset
         end
 
+        opts.on '-s', '--show WHAT', "Show current setup. Options are 'a' for current author, 'e' for email and 'i' for initials." do |what|
+          what = what.split('')
+          if what.include?('a')
+            puts Config.current_author
+          end
+
+          if what.include?('e')
+            puts Config.current_email
+          end
+
+          if what.include?('i')
+            puts Config.current_initials
+          end
+
+          exit
+        end
+
         opts.separator ' '
         opts.separator highlight('Switching authors:')
         opts.separator '  git pair aa [bb]                   Where AA and BB are any abbreviation of an'

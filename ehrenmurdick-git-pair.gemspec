@@ -4,15 +4,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{edgecase-git-pair}
+  s.name = %q{ehrenmurdick-git-pair}
   s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad"]
-  s.date = %q{2010-02-25}
+  s.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad", "Ehren Murdick"]
+  s.date = %q{2010-09-27}
   s.default_executable = %q{git-pair}
   s.description = %q{A git porcelain for pair programming. Changes git-config's user.name and user.email settings so you can commit as more than one author.}
-  s.email = %q{adam@edgecase.com}
+  s.email = %q{ehren.murdick@gmail.com}
   s.executables = ["git-pair"]
   s.extra_rdoc_files = [
     "LICENSE",
@@ -39,17 +39,17 @@ Gem::Specification.new do |s|
      "lib/git-pair/command.rb",
      "lib/git-pair/config.rb"
   ]
-  s.homepage = %q{http://github.com/edgecase/git-pair}
+  s.homepage = %q{http://github.com/ehrenmurdick/git-pair}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Configure git to commit as more than one author}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<cucumber>, [">= 0"])
     else
       s.add_dependency(%q<cucumber>, [">= 0"])

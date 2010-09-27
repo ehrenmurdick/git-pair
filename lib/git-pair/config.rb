@@ -40,5 +40,11 @@ module GitPair
       `git config --get user.email`.strip
     end
 
+    def current_initials
+      current_author.split('+').map do |auth|
+        auth.split.map { |word| word[0].chr }.join.downcase
+      end.join('+')
+    end
+
   end
 end

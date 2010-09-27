@@ -4,14 +4,14 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "edgecase-git-pair"
+    gem.name = "ehrenmurdick-git-pair"
     gem.summary = "Configure git to commit as more than one author"
     gem.description = "A git porcelain for pair programming. Changes " +
                       "git-config's user.name and user.email settings so you " +
                       "can commit as more than one author."
-    gem.email = "adam@edgecase.com"
-    gem.homepage = "http://github.com/edgecase/git-pair"
-    gem.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad"]
+    gem.email = "ehren.murdick@gmail.com"
+    gem.homepage = "http://github.com/ehrenmurdick/git-pair"
+    gem.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad", "Ehren Murdick"]
     gem.add_development_dependency "cucumber", ">= 0"
   end
   Jeweler::GemcutterTasks.new
