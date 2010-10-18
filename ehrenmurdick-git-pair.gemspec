@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Kampmeier", "Adam McCrea", "Jon Distad", "Ehren Murdick"]
-  s.date = %q{2010-09-27}
+  s.date = %q{2010-10-18}
   s.default_executable = %q{git-pair}
   s.description = %q{A git porcelain for pair programming. Changes git-config's user.name and user.email settings so you can commit as more than one author.}
   s.email = %q{ehren.murdick@gmail.com}

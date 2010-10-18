@@ -40,6 +40,11 @@ module GitPair
           exit
         end
 
+        opts.on '--avatar', "Create a composite avatar using the gravatars of the two authors" do
+          Config.avatar Author.find_all(args[1..-1])
+          exit
+        end
+
         opts.separator ' '
         opts.separator highlight('Switching authors:')
         opts.separator '  git pair aa [bb]                   Where AA and BB are any abbreviation of an'

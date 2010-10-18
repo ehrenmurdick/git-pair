@@ -6,6 +6,33 @@ module GitPair
       `git config --global --get-all git-pair.authors`.split("\n")
     end
 
+    def avatar(authors)
+      require 'digest/md5'
+      require 'rmagick'
+      require 'open-uri'
+
+      imgs = []
+
+      authors.each do |auth|
+        hash = Digest::MD5.hexdigest(auth.email)
+        image_src = "http://www.gravatar.com/avatar/#{hash}"
+
+        imgs << Magick::Image.from_blob(open(image_src).read).first
+      end
+
+      imgs.first.crop!(0, 0, imgs.first.columns / 2, imgs.first.rows)
+
+      midline = Magick::Image.new(4, imgs.last.columns, Magick::HatchFill.new('#800','#800'))
+
+      imgs.last.composite!(imgs.first, Magick::WestGravity, Magick::AtopCompositeOp)
+      imgs.last.composite!(midline, Magick::CenterGravity, Magick::AtopCompositeOp)
+
+
+      filename = authors.map { |a| initials(a.name) }.join("+")
+
+      imgs.last.write("#{filename}.jpg")
+    end
+
     def add_author(author)
       unless Author.exists?(author)
         `git config --global --add git-pair.authors "#{author.name} <#{author.email}>"`
@@ -40,9 +67,13 @@ module GitPair
       `git config --get user.email`.strip
     end
 
+    def initials(name)
+      name.split.map { |word| word[0].chr }.join.downcase
+    end
+
     def current_initials
       current_author.split('+').map do |auth|
-        auth.split.map { |word| word[0].chr }.join.downcase
+        initials(auth)
       end.join('+')
     end
 
