@@ -22,7 +22,7 @@ module GitPair
 
       imgs.first.crop!(0, 0, imgs.first.columns / 2, imgs.first.rows)
 
-      midline = Magick::Image.new(4, imgs.last.columns, Magick::HatchFill.new('#800','#800'))
+      midline = Magick::Image.new(2, imgs.last.columns, Magick::HatchFill.new('#800','#800'))
 
       imgs.last.composite!(imgs.first, Magick::WestGravity, Magick::AtopCompositeOp)
       imgs.last.composite!(midline, Magick::CenterGravity, Magick::AtopCompositeOp)
